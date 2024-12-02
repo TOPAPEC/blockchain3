@@ -27,5 +27,21 @@ contract LoopsTest is Test {
 }
 
 contract LoopsOptimizedTest is Test {
-/* YOUR SOLUTION GOES HERE */
+    LoopsOptimized loopsOpt;
+
+    function setUp() public {
+        loopsOpt = new LoopsOptimized();
+    }
+
+    function test_forOptimized() public view {
+        loopsOpt.loopFor();
+    }
+
+    function test_whileOptimized() public view {
+        loopsOpt.loopWhile();
+    }
+
+    function test_doWhileOptimized() public view {
+        loopsOpt.loopDoWhile();
+    }
 }

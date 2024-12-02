@@ -14,7 +14,9 @@ contract NestedIf is INestedIf {
 }
 
 contract NestedIfOptimized is INestedIf {
-    function call(uint256 number) public pure returns (bool flag) {
-        /* YOUR SOLUTION GOES HERE */
+    function call(uint256 x) public pure returns (bool flag) {
+        assembly {
+            flag := and(lt(x, 100), and(gt(x, 0), iszero(eq(x, 50))))
+        }
     }
 }

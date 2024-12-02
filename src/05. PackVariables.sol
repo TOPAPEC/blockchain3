@@ -24,9 +24,25 @@ contract PackVariables is IPackVariables {
 }
 
 contract PackVariablesOptimized is IPackVariables {
-    /* YOUR SOLUTION GOES HERE */
+    struct PackedData {
+        uint8 one;
+        uint8 six;
+        bytes14 five;
+        bytes18 three;
+        uint256 two;
+        uint8[30] four;
+    }
+
+    PackedData private data;
 
     function setValues(uint8 _one, uint256 _two, bytes18 _three, uint8[30] calldata _four, bytes14 _five, uint8 _six)
         public
-    {}
+    {
+        data.one = _one;
+        data.six = _six;
+        data.five = _five;
+        data.three = _three;
+        data.two = _two;
+        data.four = _four;
+    }
 }
